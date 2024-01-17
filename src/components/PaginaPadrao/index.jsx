@@ -1,7 +1,7 @@
-import Navbar from "components/Navbar";
+import Navbar from "../Navbar";
 import styles from "./PaginaPadrao.module.scss";
 import { Outlet } from "react-router-dom";
-import Footer from "components/Footer";
+import Footer from "../Footer";
 
 export default function PaginaPadrao() {
   return (
