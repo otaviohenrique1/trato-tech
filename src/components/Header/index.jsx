@@ -1,5 +1,30 @@
 import styles from "./Header.module.scss";
 import PropTypes from 'prop-types';
+import TituloSemImagem from "./TituloSemImagem";
+import TituloComImagem from "./TituloComImagem";
+
+export default function Header({ titulo, descricao, className = '', imagem}) {
+  return (
+    <header className={styles.header}>
+      {titulo && !imagem && <TituloSemImagem
+        titulo={titulo}
+        descricao={descricao}
+      />}
+      {titulo && imagem && <TituloComImagem />}
+    </header>
+  );
+}
+
+Header.propTypes = {
+  titulo: PropTypes.string,
+  descricao: PropTypes.string,
+  className: PropTypes.string,
+  imagem: PropTypes.string,
+};
+
+/*
+import styles from "./Header.module.scss";
+import PropTypes from 'prop-types';
 
 export default function Header({ titulo, descricao, className = '', imagem}) {
   return (
@@ -24,3 +49,4 @@ Header.propTypes = {
   className: PropTypes.string,
   imagem: PropTypes.string,
 };
+*/

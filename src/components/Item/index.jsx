@@ -5,6 +5,7 @@ import { mudarFavorito } from 'store/reducers/itens';
 import { mudarCarrinho } from 'store/reducers/carrinho';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const iconeProps = {
   size: 24,
@@ -12,7 +13,7 @@ const iconeProps = {
 };
 
 export default function Item(props) {
-  const { titulo, foto, preco, descricao, favorito, id } = props;
+  const { titulo, foto, preco, descricao, favorito, id, carrinho } = props;
   const dispatch = useDispatch();
   const estaNoCarrinho = useSelector((state) => state.carrinho.some((itemNoCarrinho) => itemNoCarrinho.id === id));
 
@@ -25,7 +26,7 @@ export default function Item(props) {
   } 
 
   return (
-    <div className={styles.item}>
+    <div className={classNames(styles.item, {[styles.itemNoCarrinho]: carrinho})}>
       <div className={styles['item-imagem']}>
         <img src={foto} alt={titulo} />
       </div>
@@ -63,4 +64,5 @@ Item.propTypes = {
   descricao: PropTypes.string,
   favorito: PropTypes.bool,
   id: PropTypes.string,
+  carrinho: PropTypes.bool,
 };
