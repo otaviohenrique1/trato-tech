@@ -1,8 +1,9 @@
 import styles from "./TituloComImagem.module.scss";
+import PropTypes from 'prop-types';
 
-export default function TituloComImagem() {
+export default function TituloComImagem({titulo, descricao, imagem, className}) {
   return (
-    <div>
+    <div className={`${className} ${styles.header}`}>
       <div className={styles['header-texto']}>
         <h1>{titulo}</h1>
         <h2>{descricao}</h2>
@@ -16,3 +17,10 @@ export default function TituloComImagem() {
     </div>
   );
 }
+
+TituloComImagem.propTypes = {
+  titulo: PropTypes.string,
+  descricao: PropTypes.string,
+  imagem: PropTypes.string,
+  className: PropTypes.string,
+};

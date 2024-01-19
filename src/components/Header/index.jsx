@@ -10,7 +10,12 @@ export default function Header({ titulo, descricao, className = '', imagem}) {
         titulo={titulo}
         descricao={descricao}
       />}
-      {titulo && imagem && <TituloComImagem />}
+      {titulo && imagem && <TituloComImagem
+        titulo={titulo}
+        descricao={descricao}
+        imagem={imagem}
+        className={className}
+      />}
     </header>
   );
 }
