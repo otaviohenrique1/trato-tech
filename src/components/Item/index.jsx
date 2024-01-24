@@ -1,8 +1,8 @@
 import styles from './Item.module.scss';
 import { AiOutlineHeart, AiFillHeart, AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai';
 import { FaCartPlus } from 'react-icons/fa';
-import { mudarFavorito } from 'store/reducers/itens';
-import { mudarCarrinho, mudarQuantidade } from 'store/reducers/carrinho';
+import { mudarFavorito } from '../../store/reducers/itens';
+import { mudarCarrinho, mudarQuantidade } from '../../store/reducers/carrinho';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
